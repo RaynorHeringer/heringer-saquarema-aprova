@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const Projects = (6) => {
+const Projects = () => {
   const [activeTab, setActiveTab] = useState('todos');
   
   const tabs = [
@@ -51,13 +51,6 @@ const Projects = (6) => {
     },
     {
       id: 6,
-      title: "Aprovação em Prefeitura",
-      category: "aprovacoes",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      description: "Processo completo de aprovação de projeto residencial multifamiliar."
-    },
-    {
-      id: 7,
       title: "Aprovação em Prefeitura",
       category: "aprovacoes",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
