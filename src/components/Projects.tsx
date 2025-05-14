@@ -9,7 +9,7 @@ const Projects = () => {
   const tabs = [
     { id: 'todos', label: 'Todos' },
     { id: 'Saquarema', label: 'Saquarema' },
-    { id: 'Maricá', label: 'Marica' },
+    { id: 'Marica', label: 'Maricá' },
     { id: 'aprovacoes', label: 'Aprovações' }
   ];
   
@@ -51,6 +51,13 @@ const Projects = () => {
     },
     {
       id: 6,
+      title: "Aprovação em Prefeitura",
+      category: "aprovacoes",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
+      description: "Processo completo de aprovação de projeto residencial multifamiliar."
+    },
+    {
+      id: 7,
       title: "Aprovação em Prefeitura",
       category: "aprovacoes",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
