@@ -18,7 +18,7 @@ const Projects = () => {
       id: 1,
       title: "Jacone",
       category: "Saquarema",
-      image: "blob:https://onedrive.live.com/6276228e-236a-4a74-a461-f07927e5c6e3",
+      image: "https://drive.google.com/file/d/1neLAu4r4VpygW2vWcOOgiXB_xZ7ZWfol/view?usp=sharing",
       description: "Projeto arquitetônico residencial em Jacone aprovado na prefeitura de Saquarema."
     },
     {
