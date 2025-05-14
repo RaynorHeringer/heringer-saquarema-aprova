@@ -24,7 +24,7 @@ const Hero = () => {
             Especialistas em desenvolvimento de projetos para aprovação e econstrução na Região dos Lagos,
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" variant="outline" className="bg-white text-heringer-blue hover:bg-gray-100">
+            <Button size="lg" variant="outline" className="text-blue border-white hover:bg-white/10">
               Nossos Serviços
             </Button>
             <Button size="lg" variant="outline" className="text-blue border-white hover:bg-white/10">
