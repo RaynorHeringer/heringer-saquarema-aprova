@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const Projects = () => {
+const Projects = (6) => {
   const [activeTab, setActiveTab] = useState('todos');
   
   const tabs = [
