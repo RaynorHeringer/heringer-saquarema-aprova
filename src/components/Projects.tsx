@@ -9,7 +9,7 @@ const Projects = () => {
   const tabs = [
     { id: 'todos', label: 'Todos' },
     { id: 'Saquarema', label: 'Saquarema' },
-    { id: 'Marica', label: 'Marica' },
+    { id: 'Maricá', label: 'Marica' },
     { id: 'aprovacoes', label: 'Aprovações' }
   ];
   
@@ -18,7 +18,7 @@ const Projects = () => {
       id: 1,
       title: "Jacone",
       category: "Saquarema",
-      image: "https://onedrive.live.com/?qt=allmyphotos&photosData=%2Fshare%2FA898CFFE06912696%21s6121c1c1e503449d9e41d6b74d1fd957%3Fithint%3Dphoto%26e%3DUaLSoH%26migratedtospo%3Dtrue&sw=bypassConfig&cid=A898CFFE06912696&id=A898CFFE06912696%21s6121c1c1e503449d9e41d6b74d1fd957&redeem=aHR0cHM6Ly8xZHJ2Lm1zL2kvYy9hODk4Y2ZmZTA2OTEyNjk2L0VjSEJJV0VENVoxRW5rSFd0MDBmMlZjQlh6Rl9SQ1BuMHpGeVJaTFdiYlptM2c%5FZT1VYUxTb0g&v=photos",
+      image: "blob:https://onedrive.live.com/6276228e-236a-4a74-a461-f07927e5c6e3",
       description: "Projeto arquitetônico residencial em Jacone aprovado na prefeitura de Saquarema."
     },
     {
