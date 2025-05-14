@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">HERINGER ENGENHARIA</h3>
             <p className="mb-4 text-gray-300">
-              Especialistas em desenvolvimento de projetos e processos de aprovação junto às prefeituras da Região dos Lagos, Saquarema.
+              Especialistas no desenvolvimento de projetos arquitetônicos, processos de aprovação.
             </p>
           </div>
           
@@ -54,11 +54,11 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">Contato</h3>
             <address className="not-italic">
-              <p className="mb-2">Av. Saquarema, 5100</p>
-              <p className="mb-2">Porto da Roça, Saquarema - RJ</p>
-              <p className="mb-2">CEP: 28990-000</p>
-              <p className="mb-2">Tel: (22) 2656-2667</p>
-              <p>WhatsApp: (22) 99963-2073</p>
+              <p className="mb-2">Jacone.</p>
+              <p className="mb-2">Saquarema - RJ</p>
+              <p className="mb-2">CEP: 28990-660</p>
+              <p className="mb-2">Tel: (21) 98093-8544</p>
+              <p>WhatsApp: (21) 98093-8544</p>
             </address>
           </div>
         </div>
