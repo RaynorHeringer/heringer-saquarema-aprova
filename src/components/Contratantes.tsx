@@ -1,13 +1,13 @@
-
+rviç
 import React from 'react';
 import { Banknote, Gavel, Ship, Building } from 'lucide-react';
 
 const Contratantes = () => {
   const contratantes = [
-    { nome: 'Banco do Brasil', icon: Banknote, descricao: 'Projetos de agências e instalações bancárias' },
-    { nome: 'Tribunal de Justiça do RJ', icon: Gavel, descricao: 'Projetos de infraestrutura judiciária' },
-    { nome: 'Marinha do Brasil', icon: Ship, descricao: 'Projetos de instalações navais e equipamentos' },
-    { nome: 'BNDES', icon: Building, descricao: 'Projetos de desenvolvimento e infraestrutura' }
+    { nome: 'Banco do Brasil', icon: Banknote, descricao: 'Serviços de avaliação e elaboração de laudos.' },
+    { nome: 'Tribunal de Justiça do RJ', icon: Gavel, descricao: 'Elaboração de laudos de pericia em eng. Civil' },
+    { nome: 'Marinha do Brasil', icon: Ship, descricao: 'Serviço de Engenharia para CCCPM' },
+    { nome: 'BNDES', icon: Building, descricao: 'Serviços de avaliação em geral' }
   ];
 
   return (
@@ -16,7 +16,7 @@ const Contratantes = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-heringer-blue mb-4">Nossos Contratantes</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Temos orgulho de trabalhar com instituições de renome que confiam em nossa expertise para seus projetos de engenharia.
+            Temos orgulho de trabalhar com instituições de renome que confiam em nossa expertise para seus serviços de engenharia.
           </p>
         </div>
 
