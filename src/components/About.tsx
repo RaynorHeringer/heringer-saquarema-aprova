@@ -16,7 +16,7 @@ const About = () => {
     },
     {
       title: "Projetos Completos",
-      description: "Do arquitetonico, ao complementares.",
+      description: "Arquitônico e complementares.",
       icon: Building
     },
     {
@@ -31,20 +31,20 @@ const About = () => {
       <div className="container mx-auto px-4">
         <h2 className="section-title text-heringer-blue">Sobre Nós</h2>
         <p className="section-description">
-          A HERINGER ENGENHARIA é especializada em desenvolvimento de projetos e processos de aprovação junto às prefeituras da Região dos Lagos, com foco em Saquarema.
+          A HERINGER ENGENHARIA é especializada em desenvolvimento de projetos arquitetônicos e processos de aprovação e legalização, assim como elaboração de projetos complementares como estrututural, Elétrico, e Hidrosanitario.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-12">
           <div>
             <h3 className="text-2xl font-bold mb-4 text-heringer-blue">Nossa Missão</h3>
             <p className="text-gray-700 mb-6">
-              Facilitar o processo de aprovação de projetos para nossos clientes, garantindo qualidade técnica e conformidade com todas as normas vigentes na Região dos Lagos.
+              Elaborar projetos que atendam as necessidades do cliente em primeiro lugar, trazendo para o papel o seu sonho de construção, garantindo qualidade técnica e conformidade com todas as normas vigentes na Região dos Lagos.
             </p>
             
             <h3 className="text-2xl font-bold mb-4 text-heringer-blue">Por Que Escolher a Heringer?</h3>
             <ul className="space-y-3">
               {[
-                "Profundo conhecimento dos procedimentos locais",
+                "Projetos elaborados em BIM, usando os que há de mais atual no mercado",
                 "Equipe técnica altamente qualificada",
                 "Acompanhamento personalizado em todas as etapas",
                 "Expertise em normas e legislações municipais",
