@@ -1,4 +1,4 @@
-rviç
+
 import React from 'react';
 import { Banknote, Gavel, Ship, Building } from 'lucide-react';
 
