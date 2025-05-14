@@ -66,7 +66,7 @@ const Contact = () => {
                   <MapPin className="h-6 w-6 text-heringer-light-blue mr-3 mt-1" />
                   <div>
                     <p className="font-bold">Endereço:</p>
-                    <p className="text-gray-700">Av. Saquarema, 5100 - Porto da Roça, Saquarema - RJ, 28990-000</p>
+                    <p className="text-gray-700">Jaconé, Saquarema - RJ, 28990-660</p>
                   </div>
                 </div>
                 
@@ -74,7 +74,7 @@ const Contact = () => {
                   <Phone className="h-6 w-6 text-heringer-light-blue mr-3 mt-1" />
                   <div>
                     <p className="font-bold">Telefone:</p>
-                    <p className="text-gray-700">(22) 2656-2667</p>
+                    <p className="text-gray-700">(21) 98093-8544</p>
                   </div>
                 </div>
 
@@ -82,7 +82,7 @@ const Contact = () => {
                   <Smartphone className="h-6 w-6 text-heringer-light-blue mr-3 mt-1" />
                   <div>
                     <p className="font-bold">WhatsApp:</p>
-                    <p className="text-gray-700">(22) 99963-2073</p>
+                    <p className="text-gray-700">(21) 98093-8544</p>
                   </div>
                 </div>
                 
@@ -90,7 +90,7 @@ const Contact = () => {
                   <Mail className="h-6 w-6 text-heringer-light-blue mr-3 mt-1" />
                   <div>
                     <p className="font-bold">Email:</p>
-                    <p className="text-gray-700">contato@heringerengenharia.com</p>
+                    <p className="text-gray-700">eng@heringerengenharia.com</p>
                   </div>
                 </div>
                 
@@ -110,7 +110,7 @@ const Contact = () => {
               <h4 className="text-xl font-bold mb-3 text-green-700">Precisa de uma resposta rápida?</h4>
               <p className="mb-4 text-green-800">Entre em contato pelo WhatsApp para um atendimento imediato.</p>
               <a 
-                href="https://wa.me/5522999632073" 
+                href="https://wa.me/5521980938544" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center justify-center w-full bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-md font-medium transition-colors"
