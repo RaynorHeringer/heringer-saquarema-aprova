@@ -8,30 +8,30 @@ const Projects = () => {
   
   const tabs = [
     { id: 'todos', label: 'Todos' },
-    { id: 'residenciais', label: 'Residenciais' },
-    { id: 'comerciais', label: 'Comerciais' },
+    { id: 'Saquarema', label: 'Saquarema' },
+    { id: 'Marica', label: 'Marica' },
     { id: 'aprovacoes', label: 'Aprovações' }
   ];
   
   const projects = [
     {
       id: 1,
-      title: "Residência Jaconé",
-      category: "residenciais",
-      image: "https://canadacentral1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192219&inputFormat=jpg&cs=MDAwMDAwMDAtMDAwMC0wMDAwLTAwMDAtMDAwMDQ4MTcxMGE0fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!I_8WAgbT8EiWkBBS0rnosgc3iKkSGMFFgCz5qSZioC5soyJAHNuVSLJPpnX1vKAd%2Fitems%2F01IUZ75ASKQOMSYLG7GVGIFA2NBH6IEDJE%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIwMjE2ZmYyMy1kMzA2LTQ4ZjAtOTY5MC0xMDUyZDJiOWU4YjIiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDcyNzgwMDAifQ.5kge_3RHmI-ZmDAaIjBVl5N8v1fs-e03AgxH0AoI_ThhgAptqcRCV3-_r-g6nWhZB2cY2Q53NfF93XjbAXLXEPK0k2x7uWy2r_wsO1rAzMQMVuVg2uR515GgQoq6WFB9TpctbWqSu76V1qOVcjNMlrtFA23bQEBlkyanGKOoMe4hfMFvl5Gc4FHvE7h9DU0zXHePxr_qUOlakLxYpVl13VSX8RiqbyUigJxSSZPovIPgrvxLhpK33Kyc-DzxWKwlg1LjiPcAAICT1k3XhAZpNuzQ0w0ei_v5Bk7UL2AOXSHJj4uzmmrLKTXH_rHYZrel4Mm1AOPOaTI7c9Iiw6mW6yig89XeCnDPFFlaKXlZAIKsIM8kzzgj7KupNB_VPmdx.GqqOPdrU1aJbWjzjWCL5VbognjANPkxGlP4jKRPocn4%26version%3DPublished&cb=63882859936&encodeFailures=1&width=1534&height=863",
+      title: "Jacone",
+      category: "Saquarema",
+      image: "blob:https://onedrive.live.com/0bb496b6-74aa-4c7c-8968-5775d1d4da02",
       description: "Projeto arquitetônico residencial aprovado na prefeitura de Saquarema."
     },
     {
       id: 2,
-      title: "Edifício Comercial Centro",
-      category: "comerciais",
-      image: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b",
+      title: "Vilatur",
+      category: "Saquarema",
+      image: "https://canadacentral1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192219&inputFormat=jpg&cs=MDAwMDAwMDAtMDAwMC0wMDAwLTAwMDAtMDAwMDQ4MTcxMGE0fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!I_8WAgbT8EiWkBBS0rnosgc3iKkSGMFFgCz5qSZioC5soyJAHNuVSLJPpnX1vKAd%2Fitems%2F01IUZ75ASKQOMSYLG7GVGIFA2NBH6IEDJE%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIwMjE2ZmYyMy1kMzA2LTQ4ZjAtOTY5MC0xMDUyZDJiOWU4YjIiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDcyNzgwMDAifQ.5kge_3RHmI-ZmDAaIjBVl5N8v1fs-e03AgxH0AoI_ThhgAptqcRCV3-_r-g6nWhZB2cY2Q53NfF93XjbAXLXEPK0k2x7uWy2r_wsO1rAzMQMVuVg2uR515GgQoq6WFB9TpctbWqSu76V1qOVcjNMlrtFA23bQEBlkyanGKOoMe4hfMFvl5Gc4FHvE7h9DU0zXHePxr_qUOlakLxYpVl13VSX8RiqbyUigJxSSZPovIPgrvxLhpK33Kyc-DzxWKwlg1LjiPcAAICT1k3XhAZpNuzQ0w0ei_v5Bk7UL2AOXSHJj4uzmmrLKTXH_rHYZrel4Mm1AOPOaTI7c9Iiw6mW6yig89XeCnDPFFlaKXlZAIKsIM8kzzgj7KupNB_VPmdx.GqqOPdrU1aJbWjzjWCL5VbognjANPkxGlP4jKRPocn4%26version%3DPublished&cb=63882859936&encodeFailures=1&width=1534&height=863",
       description: "Projeto comercial com área de 450m² em Saquarema."
     },
     {
       id: 3,
       title: "Conjunto Residencial Bacaxá",
-      category: "residenciais",
+      category: "Saquarema",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
       description: "Condomínio com 5 unidades residenciais em Bacaxá."
     },
@@ -45,7 +45,7 @@ const Projects = () => {
     {
       id: 5,
       title: "Centro Empresarial",
-      category: "comerciais",
+      category: "Marica",
       image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
       description: "Projeto para centro empresarial na região central de Saquarema."
     },
