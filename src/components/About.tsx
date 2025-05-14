@@ -31,7 +31,7 @@ const About = () => {
       <div className="container mx-auto px-4">
         <h2 className="section-title text-heringer-blue">Sobre Nós</h2>
         <p className="section-description">
-          A HERINGER ENGENHARIA é especializada em desenvolvimento de projetos arquitetônicos e processos de aprovação e legalização, assim como elaboração de projetos complementares como estrututural, Elétrico, e Hidrosanitario.
+          A HERINGER ENGENHARIA é especializada em desenvolvimento de projetos arquitetônicos e processos de aprovação e legalização, assim como elaboração de projetos complementares como estrutural, Elétrico, e Hidrosanitario.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mt-12">
