@@ -18,7 +18,7 @@ const Projects = () => {
       id: 1,
       title: "Residência Jaconé",
       category: "residenciais",
-      image: "https://images.unsplash.com/photo-1460574283810-2aab119d8511",
+      image: "https://drive.google.com/file/d/1Rqu0cx6yF2R1G5UXkp5ngSBZq-P1nmx8/view?usp=sharing",
       description: "Projeto arquitetônico residencial aprovado na prefeitura de Saquarema."
     },
     {
