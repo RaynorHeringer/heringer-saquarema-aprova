@@ -18,7 +18,7 @@ const Projects = () => {
       id: 1,
       title: "Residência Jaconé",
       category: "residenciais",
-      image: "https://1drv.ms/i/c/a898cffe06912696/EUqDmSws3zVMgoNNCfyCDSQBOz4M9aR2ict6D2P1z94YEw?e=n5aTZ2",
+      image: "https://canadacentral1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192219&inputFormat=jpg&cs=MDAwMDAwMDAtMDAwMC0wMDAwLTAwMDAtMDAwMDQ4MTcxMGE0fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!I_8WAgbT8EiWkBBS0rnosgc3iKkSGMFFgCz5qSZioC5soyJAHNuVSLJPpnX1vKAd%2Fitems%2F01IUZ75ASKQOMSYLG7GVGIFA2NBH6IEDJE%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIwMjE2ZmYyMy1kMzA2LTQ4ZjAtOTY5MC0xMDUyZDJiOWU4YjIiLCJhcHBpZCI6IjAwMDAwMDAwLTAwMDAtMDAwMC0wMDAwLTAwMDA0ODE3MTBhNCIsImF1ZCI6IjAwMDAwMDAzLTAwMDAtMGZmMS1jZTAwLTAwMDAwMDAwMDAwMC9teS5taWNyb3NvZnRwZXJzb25hbGNvbnRlbnQuY29tQDkxODgwNDBkLTZjNjctNGM1Yi1iMTEyLTM2YTMwNGI2NmRhZCIsImV4cCI6IjE3NDcyNzgwMDAifQ.5kge_3RHmI-ZmDAaIjBVl5N8v1fs-e03AgxH0AoI_ThhgAptqcRCV3-_r-g6nWhZB2cY2Q53NfF93XjbAXLXEPK0k2x7uWy2r_wsO1rAzMQMVuVg2uR515GgQoq6WFB9TpctbWqSu76V1qOVcjNMlrtFA23bQEBlkyanGKOoMe4hfMFvl5Gc4FHvE7h9DU0zXHePxr_qUOlakLxYpVl13VSX8RiqbyUigJxSSZPovIPgrvxLhpK33Kyc-DzxWKwlg1LjiPcAAICT1k3XhAZpNuzQ0w0ei_v5Bk7UL2AOXSHJj4uzmmrLKTXH_rHYZrel4Mm1AOPOaTI7c9Iiw6mW6yig89XeCnDPFFlaKXlZAIKsIM8kzzgj7KupNB_VPmdx.GqqOPdrU1aJbWjzjWCL5VbognjANPkxGlP4jKRPocn4%26version%3DPublished&cb=63882859936&encodeFailures=1&width=1534&height=863",
       description: "Projeto arquitetônico residencial aprovado na prefeitura de Saquarema."
     },
     {
@@ -65,7 +65,7 @@ const Projects = () => {
   return (
     <section id="projects" className="section-padding bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="section-title text-heringer-blue">Projetos Realizados</h2>
+        <h2 className="section-title text-heringer-blue">Alguns Projetos Realizados</h2>
         <p className="section-description">
           Conheça alguns dos nossos projetos desenvolvidos e aprovados na Região dos Lagos.
         </p>
