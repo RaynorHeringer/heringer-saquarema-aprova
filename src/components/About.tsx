@@ -16,7 +16,7 @@ const About = () => {
     },
     {
       title: "Projetos Completos",
-      description: "Do conceito à aprovação final na prefeitura.",
+      description: "Do arquitetonico, ao complementares.",
       icon: Building
     },
     {
