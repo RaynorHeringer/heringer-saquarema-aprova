@@ -40,7 +40,7 @@ Com atendimento e preço muito bom.",
       <div className="container mx-auto px-4">
         <h2 className="section-title text-heringer-blue">O Que Dizem Nossos Clientes</h2>
         <p className="section-description">
-          A satisfação dos nossos clientes é o nosso maior patrimônio. Confira alguns depoimentos.
+          A satisfação dos nossos clientes é o nosso maior patrimônio. Confira alguns depoimentos no Google empresas.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
