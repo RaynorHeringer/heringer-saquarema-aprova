@@ -8,7 +8,7 @@ const Services = () => {
     {
       icon: FileText,
       title: "Projetos Arquitetônicos",
-      description: "Desenvolvimento de projetos residenciais e comerciais com rendereização 3D."
+      description: "Desenvolvimento de projetos residenciais e comerciais com renderização 3D."
     },
     {
       icon: Building,
@@ -23,7 +23,7 @@ const Services = () => {
     {
       icon: Ruler,
       title: "Projetos Estruturais",
-      description: "Elaboração de projetos estruturais com cálculos precisos para garantir a segurança e viabilidade da sua construção."
+      description: "Elaboração de projetos estruturais, com cálculos precisos para garantir a segurança e viabilidade da sua construção."
     },
     {
       icon: FilePlus,
