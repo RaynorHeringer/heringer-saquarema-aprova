@@ -16,7 +16,7 @@ const Contratantes = () => {
     { 
       nome: 'Marinha do Brasil', 
       logo: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Coat_of_arms_of_the_Brazilian_Navy.svg',
-      descricao: 'Serviço de Engenharia para CCCPM' 
+      descricao: 'Serviços de Engenharia para CCCPM' 
     },
     { 
       nome: 'BNDES', 
