@@ -18,21 +18,21 @@ const Projects = () => {
       id: 1,
       title: "Jacone",
       category: "Saquarema",
-      image: "/lovable-uploads/Image13.jpg",
+      image: "/lovable-uploads/Imagem13.jpg",
       description: "Projeto arquitetônico residencial em Jacone aprovado na prefeitura de Saquarema."
     },
     {
       id: 2,
       title: "Vilatur",
       category: "Saquarema",
-      image: "/lovable-uploads/image35.jpg",
+      image: "/lovable-uploads/Image35.jpg",
       description: "Projeto arquitetônico residencial em Vilatur aprovado na prefeitura de Saquarema."
     },
     {
       id: 3,
       title: "Bacaxá",
       category: "Saquarema",
-      image: "/lovable-uploads/imagem24.jpg",
+      image: "/lovable-uploads/imagem24.png",
       description: "Residencia de alto padrão em Bacaxa."
     },
     {
@@ -51,7 +51,7 @@ const Projects = () => {
     },
     {
       id: 6,
-      title: "Sirio interior de Marica",
+      title: "Sitio interior de Maricá",
       category: "Marica",
       image: "/lovable-uploads/Marica02.jpg",
       description: "Projeto de reforma no interior de Maricá."
