@@ -34,7 +34,12 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#home" className="font-montserrat font-bold text-2xl text-heringer-blue">
+        <a href="#home" className="font-montserrat font-bold text-2xl text-heringer-blue flex items-center">
+          <img 
+            src="/lovable-uploads/53477f4b-d4a8-4193-a737-c8c30efa16f0.png" 
+            alt="Heringer Engenharia Logo" 
+            className="h-10 mr-2" 
+          />
           HERINGER <span className="font-normal">ENGENHARIA</span>
         </a>
 
