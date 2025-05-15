@@ -29,8 +29,7 @@ const Testimonials = () => {
       id: 4,
       name: "Beatriz Furtado",
       role: "Proprietária",
-      content: "Engenheiro civil com projetos renderizados em alta qualidade.
-Com atendimento e preço muito bom.",
+      content: "Engenheiro civil com projetos renderizados em alta qualidade. Com atendimento e preço muito bom.",
       rating: 5
     }
   ];
