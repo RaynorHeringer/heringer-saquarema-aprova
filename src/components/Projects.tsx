@@ -19,21 +19,21 @@ const Projects = () => {
       title: "Jacone",
       category: "Saquarema",
       image: "/lovable-uploads/Imagem13.jpg",
-      description: "Projeto arquitetônico residencial em Jacone aprovado na prefeitura de Saquarema."
+      description: "Projeto arquitetônico residencial em Jacone - Saquarema."
     },
     {
       id: 2,
       title: "Vilatur",
       category: "Saquarema",
       image: "/lovable-uploads/Image35.jpg",
-      description: "Projeto arquitetônico residencial em Vilatur aprovado na prefeitura de Saquarema."
+      description: "Projeto arquitetônico residencial em Vilatur - Saquarema."
     },
     {
       id: 3,
       title: "Bacaxá",
       category: "Saquarema",
       image: "/lovable-uploads/Imagem24.png",
-      description: "Residencia de alto padrão em Bacaxa."
+      description: "Projeto arquitetônico residencial em Bacaxa - Saquarema."
     },
     {
       id: 4,
@@ -47,7 +47,7 @@ const Projects = () => {
       title: "AlphaVille",
       category: "Marica",
       image: "/lovable-uploads/marica01.jpg",
-      description: "Projeto para centro empresarial na região central de Saquarema."
+      description: "Projeto arquitetônico residencia em condominio de Maricá."
     },
     {
       id: 6,
