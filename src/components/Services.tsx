@@ -8,7 +8,7 @@ const Services = () => {
     {
       icon: FileText,
       title: "Projetos Arquitetônicos",
-      description: "Desenvolvimento de projetos residenciais, comerciais e industriais com foco nas normas locais da Região dos Lagos."
+      description: "Desenvolvimento de projetos residenciais e comerciais com rendereização 3D."
     },
     {
       icon: Building,
@@ -18,7 +18,7 @@ const Services = () => {
     {
       icon: CheckSquare,
       title: "Aprovação de Projetos",
-      description: "Acompanhamento completo do processo de aprovação junto às prefeituras da Região dos Lagos, incluindo Saquarema."
+      description: "Acompanhamento completo do processo de aprovação junto às prefeituras da Região dos Lagos, como Saquarema e Araruama."
     },
     {
       icon: Ruler,
@@ -28,12 +28,12 @@ const Services = () => {
     {
       icon: FilePlus,
       title: "Projetos Complementares",
-      description: "Desenvolvimento de projetos elétricos, hidráulicos, SPDA e demais projetos complementares necessários."
+      description: "Desenvolvimento de projetos elétricos, hidráulicos, e demais projetos complementares necessários."
     },
     {
       icon: HelpCircle,
       title: "Consultoria Técnica",
-      description: "Orientação especializada sobre normas, legislação e processos construtivos específicos para a Região dos Lagos."
+      description: "Orientação especializada sobre normas, legislação e processos construtivos."
     }
   ];
 
@@ -42,7 +42,7 @@ const Services = () => {
       <div className="container mx-auto px-4">
         <h2 className="section-title text-heringer-blue">Nossos Serviços</h2>
         <p className="section-description">
-          Oferecemos soluções completas em engenharia e arquitetura, com ênfase no processo de aprovação junto às prefeituras da Região dos Lagos.
+          Oferecemos soluções completas em engenharia e arquitetura para o seu projeto.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
