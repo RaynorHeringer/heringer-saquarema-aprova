@@ -4,6 +4,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
+  const openWhatsApp = () => {
+    window.open('https://wa.me/5521980938544', '_blank');
+  };
+
   return (
     <section 
       id="home" 
@@ -24,10 +28,24 @@ const Hero = () => {
             Especialistas em desenvolvimento de projetos para aprovação e construção na Região dos Lagos.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" variant="outline" className="text-blue border-white hover:bg-white/10">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-blue border-white hover:bg-white/10"
+              onClick={() => {
+                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Nossos Serviços
             </Button>
-            <Button size="lg" variant="outline" className="text-blue border-white hover:bg-white/10">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="text-blue border-white hover:bg-white/10"
+              onClick={() => {
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               Fale Conosco <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>

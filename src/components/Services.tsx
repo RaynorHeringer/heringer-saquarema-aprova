@@ -37,6 +37,10 @@ const Services = () => {
     }
   ];
 
+  const openWhatsApp = () => {
+    window.open('https://wa.me/5521980938544', '_blank');
+  };
+
   return (
     <section id="services" className="section-padding bg-heringer-gray">
       <div className="container mx-auto px-4">
@@ -57,7 +61,11 @@ const Services = () => {
 
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-bold mb-6">Precisa de um serviço específico?</h3>
-          <Button size="lg" className="bg-heringer-blue hover:bg-heringer-light-blue text-white">
+          <Button 
+            size="lg" 
+            className="bg-heringer-blue hover:bg-heringer-light-blue text-white"
+            onClick={openWhatsApp}
+          >
             Entre em Contato
           </Button>
         </div>
