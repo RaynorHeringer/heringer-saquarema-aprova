@@ -10,7 +10,7 @@ const Projects = () => {
     { id: 'todos', label: 'Todos' },
     { id: 'Saquarema', label: 'Saquarema' },
     { id: 'Marica', label: 'Maricá' },
-    { id: 'aprovacoes', label: 'Aprovações' }
+    { id: 'Araruama', label: 'Araruama' }
   ];
   
   const projects = [
@@ -18,43 +18,43 @@ const Projects = () => {
       id: 1,
       title: "Jacone",
       category: "Saquarema",
-      image: "https://drive.google.com/file/d/1neLAu4r4VpygW2vWcOOgiXB_xZ7ZWfol/preview",
+      image: "/lovable-uploads/imagem13.jpg",
       description: "Projeto arquitetônico residencial em Jacone aprovado na prefeitura de Saquarema."
     },
     {
       id: 2,
       title: "Vilatur",
       category: "Saquarema",
-      image: "/lovable-uploads/53477f4b-d4a8-4193-a737-c8c30efa16f0.png",
+      image: "/lovable-uploads/image35",
       description: "Projeto arquitetônico residencial em Vilatur aprovado na prefeitura de Saquarema."
     },
     {
       id: 3,
-      title: "Conjunto Residencial Bacaxá",
+      title: "Bacaxá",
       category: "Saquarema",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-      description: "Condomínio com 5 unidades residenciais em Bacaxá."
+      image: "/lovable-uploads/imagem24",
+      description: "Residencia de alto padrão em Bacaxa."
     },
     {
       id: 4,
-      title: "Regularização Imobiliária",
-      category: "aprovacoes",
-      image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334",
-      description: "Processo de regularização e obtenção de habite-se para residência existente."
+      title: "Collynas Park",
+      category: "Araruama",
+      image: "/lovable-uploads/araruama01",
+      description: "Projeto aprovado junto a prefeitura de Araruama."
     },
     {
       id: 5,
-      title: "Centro Empresarial",
+      title: "AlphaVille",
       category: "Marica",
-      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+      image: "/lovable-uploads/Marica 01",
       description: "Projeto para centro empresarial na região central de Saquarema."
     },
     {
       id: 6,
-      title: "Aprovação em Prefeitura",
-      category: "aprovacoes",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
-      description: "Processo completo de aprovação de projeto residencial multifamiliar."
+      title: "Sirio interior de Marica",
+      category: "Marica",
+      image: "/lovable-uploads/Marica02",
+      description: "Projeto de reforma no interior de Maricá."
     }
   ];
   
