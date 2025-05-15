@@ -6,16 +6,16 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Roberto Silva",
+      name: "Leomar Santos",
       role: "Proprietário Residencial",
-      content: "A Heringer Engenharia cuidou de todo o processo de aprovação do meu projeto em Saquarema. Profissionais extremamente competentes que conseguiram agilizar todo o processo.",
+      content: "Muito profissional o engenheiro Marcos. Fiz meu projeto a Mais de 4 anos e hoje é após esses anos ao iniciar a obra ele da até hoje um total suporte incrível e rápido.",
       rating: 5
     },
     {
       id: 2,
-      name: "Maria Santos",
-      role: "Empresária",
-      content: "Contratei para regularização de um imóvel comercial e a equipe foi excepcional. Conhecimento técnico e atendimento de primeira qualidade. Recomendo sem hesitar.",
+      name: "Thiago Alessandro",
+      role: "Empresário",
+      content: "Top, recomendo! Super atencioso e ótimo ao desenvolver de projetos.",
       rating: 5
     },
     {
@@ -27,10 +27,11 @@ const Testimonials = () => {
     },
     {
       id: 4,
-      name: "Juliana Mendes",
-      role: "Arquiteta",
-      content: "Como arquiteta, busquei parceria com a Heringer para cuidar das aprovações dos meus projetos. A eficiência deles permitiu que eu me concentrasse na parte criativa.",
-      rating: 4
+      name: "Beatriz Furtado",
+      role: "Proprietária",
+      content: "Engenheiro civil com projetos renderizados em alta qualidade.
+Com atendimento e preço muito bom.",
+      rating: 5
     }
   ];
 
