@@ -11,12 +11,12 @@ const Contratantes = () => {
     { 
       nome: 'Tribunal de Justiça do RJ', 
       logo: 'https://www.tjrj.jus.br/documents/10136/0/logo-pjerj-em-cores-com-texto-horizontal.png/8ebc4f7a-a0c9-c4f9-7a88-3b7a83f61e1c?t=1666195599203', 
-      descricao: 'Elaboração de laudos de pericia em eng. Civil' 
+      descricao: 'Elaboração de laudos de pericia em Engenharia Civil' 
     },
     { 
       nome: 'Marinha do Brasil', 
       logo: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Coat_of_arms_of_the_Brazilian_Navy.svg',
-      descricao: 'Serviços de Engenharia para CCCPM' 
+      descricao: 'Laudos para CCCPM' 
     },
     { 
       nome: 'BNDES', 
