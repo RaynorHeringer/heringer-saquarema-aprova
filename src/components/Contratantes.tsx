@@ -15,7 +15,7 @@ const Contratantes = () => {
     },
     { 
       nome: 'Marinha do Brasil', 
-      logo: 'https://logodownload.org/wp-content/uploads/2018/01/marinha-brasil-logo-0.png',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/a/ad/Coat_of_arms_of_the_Brazilian_Navy.svg',
       descricao: 'Serviço de Engenharia para CCCPM' 
     },
     { 
