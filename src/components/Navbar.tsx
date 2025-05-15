@@ -22,6 +22,10 @@ const Navbar = () => {
     };
   }, []);
 
+  const openWhatsApp = () => {
+    window.open('https://wa.me/5521980938544', '_blank');
+  };
+
   const navLinks = [
     { label: 'Home', href: '#home' },
     { label: 'Sobre Nós', href: '#about' },
@@ -58,6 +62,7 @@ const Navbar = () => {
 
         <Button 
           className="hidden md:flex bg-heringer-light-blue hover:bg-heringer-blue text-white"
+          onClick={openWhatsApp}
         >
           Orçamento
         </Button>
@@ -89,6 +94,7 @@ const Navbar = () => {
               
               <Button 
                 className="bg-heringer-light-blue hover:bg-heringer-blue text-white w-full"
+                onClick={openWhatsApp}
               >
                 Orçamento
               </Button>
