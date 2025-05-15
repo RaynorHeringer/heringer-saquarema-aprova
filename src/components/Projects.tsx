@@ -32,7 +32,7 @@ const Projects = () => {
       id: 3,
       title: "Bacaxá",
       category: "Saquarema",
-      image: "/lovable-uploads/imagem24.png",
+      image: "/lovable-uploads/Imagem24.png",
       description: "Residencia de alto padrão em Bacaxa."
     },
     {
@@ -46,12 +46,12 @@ const Projects = () => {
       id: 5,
       title: "AlphaVille",
       category: "Marica",
-      image: "/lovable-uploads/Marica01.jpg",
+      image: "/lovable-uploads/marica01.jpg",
       description: "Projeto para centro empresarial na região central de Saquarema."
     },
     {
       id: 6,
-      title: "Sitio interior de Maricá",
+      title: "Sítio interior de Maricá",
       category: "Marica",
       image: "/lovable-uploads/Marica02.jpg",
       description: "Projeto de reforma no interior de Maricá."
