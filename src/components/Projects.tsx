@@ -18,7 +18,7 @@ const Projects = () => {
       id: 1,
       title: "Jacone",
       category: "Saquarema",
-      image: "/lovable-uploads/53477f4b-d4a8-4193-a737-c8c30efa16f0.png",
+      image: "/lovable-uploads/Image13.jpg",
       description: "Projeto arquitetônico residencial em Jacone aprovado na prefeitura de Saquarema."
     },
     {
@@ -46,7 +46,7 @@ const Projects = () => {
       id: 5,
       title: "AlphaVille",
       category: "Marica",
-      image: "/lovable-uploads/Marica 01.jpg",
+      image: "/lovable-uploads/Marica01.jpg",
       description: "Projeto para centro empresarial na região central de Saquarema."
     },
     {
