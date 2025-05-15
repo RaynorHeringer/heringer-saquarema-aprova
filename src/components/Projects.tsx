@@ -25,35 +25,35 @@ const Projects = () => {
       id: 2,
       title: "Vilatur",
       category: "Saquarema",
-      image: "/lovable-uploads/image35",
+      image: "/lovable-uploads/image35.jpg",
       description: "Projeto arquitetônico residencial em Vilatur aprovado na prefeitura de Saquarema."
     },
     {
       id: 3,
       title: "Bacaxá",
       category: "Saquarema",
-      image: "/lovable-uploads/imagem24",
+      image: "/lovable-uploads/imagem24.jpg",
       description: "Residencia de alto padrão em Bacaxa."
     },
     {
       id: 4,
       title: "Collynas Park",
       category: "Araruama",
-      image: "/lovable-uploads/araruama01",
+      image: "/lovable-uploads/araruama01.jpg",
       description: "Projeto aprovado junto a prefeitura de Araruama."
     },
     {
       id: 5,
       title: "AlphaVille",
       category: "Marica",
-      image: "/lovable-uploads/Marica 01",
+      image: "/lovable-uploads/Marica 01.jpg",
       description: "Projeto para centro empresarial na região central de Saquarema."
     },
     {
       id: 6,
       title: "Sirio interior de Marica",
       category: "Marica",
-      image: "/lovable-uploads/Marica02",
+      image: "/lovable-uploads/Marica02.jpg",
       description: "Projeto de reforma no interior de Maricá."
     }
   ];
