@@ -1,14 +1,46 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { MapPin, Phone, Mail, Clock, Smartphone } from 'lucide-react';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
+    
+    // Create email content
+    const emailBody = `
+Nome: ${formData.name}
+Email: ${formData.email}
+Telefone: ${formData.phone}
+Assunto: ${formData.subject}
+
+Mensagem:
+${formData.message}
+    `;
+    
+    // Create mailto link
+    const mailtoLink = `mailto:eng.heringer@icloud.com?subject=${encodeURIComponent(formData.subject || 'Contato do Site')}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
   };
 
   const openWhatsApp = () => {
@@ -31,28 +63,59 @@ const Contact = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="block font-medium">Nome</label>
-                  <Input id="name" placeholder="Seu nome completo" required />
+                  <Input 
+                    id="name" 
+                    placeholder="Seu nome completo" 
+                    required 
+                    value={formData.name}
+                    onChange={handleInputChange}
+                  />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="block font-medium">Email</label>
-                  <Input id="email" type="email" placeholder="seu@email.com" required />
+                  <Input 
+                    id="email" 
+                    type="email" 
+                    placeholder="seu@email.com" 
+                    required 
+                    value={formData.email}
+                    onChange={handleInputChange}
+                  />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div className="space-y-2">
                   <label htmlFor="phone" className="block font-medium">Telefone</label>
-                  <Input id="phone" placeholder="(00) 00000-0000" />
+                  <Input 
+                    id="phone" 
+                    placeholder="(00) 00000-0000" 
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                  />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="subject" className="block font-medium">Assunto</label>
-                  <Input id="subject" placeholder="Assunto da mensagem" required />
+                  <Input 
+                    id="subject" 
+                    placeholder="Assunto da mensagem" 
+                    required 
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                  />
                 </div>
               </div>
 
               <div className="space-y-2 mb-6">
                 <label htmlFor="message" className="block font-medium">Mensagem</label>
-                <Textarea id="message" placeholder="Digite sua mensagem aqui..." rows={5} required />
+                <Textarea 
+                  id="message" 
+                  placeholder="Digite sua mensagem aqui..." 
+                  rows={5} 
+                  required 
+                  value={formData.message}
+                  onChange={handleInputChange}
+                />
               </div>
 
               <Button type="submit" className="bg-heringer-blue hover:bg-heringer-light-blue text-white w-full">
