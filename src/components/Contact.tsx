@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { MapPin, Phone, Mail, Clock, Smartphone } from 'lucide-react';
+import { useToast } from '@/components/ui/use-toast';
+import { MapPin, Phone, Mail, Clock, Smartphone, Loader2 } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,8 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -22,25 +25,49 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create email content
-    const emailBody = `
-Nome: ${formData.name}
-Email: ${formData.email}
-Telefone: ${formData.phone}
-Assunto: ${formData.subject}
+    setIsSubmitting(true);
 
-Mensagem:
-${formData.message}
-    `;
-    
-    // Create mailto link
-    const mailtoLink = `mailto:eng.heringer@icloud.com?subject=${encodeURIComponent(formData.subject || 'Contato do Site')}&body=${encodeURIComponent(emailBody)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
+    try {
+      // Send to Trello via Supabase edge function
+      const response = await fetch('/functions/v1/create-trello-card', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Mensagem enviada com sucesso!",
+          description: "Recebemos seu contato e entraremos em contato em breve.",
+        });
+
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error(result.error || 'Erro ao enviar mensagem');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Ocorreu um erro ao enviar sua mensagem. Tente novamente ou entre em contato pelo WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const openWhatsApp = () => {
@@ -69,6 +96,7 @@ ${formData.message}
                     required 
                     value={formData.name}
                     onChange={handleInputChange}
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div className="space-y-2">
@@ -80,6 +108,7 @@ ${formData.message}
                     required 
                     value={formData.email}
                     onChange={handleInputChange}
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -92,6 +121,7 @@ ${formData.message}
                     placeholder="(00) 00000-0000" 
                     value={formData.phone}
                     onChange={handleInputChange}
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div className="space-y-2">
@@ -102,6 +132,7 @@ ${formData.message}
                     required 
                     value={formData.subject}
                     onChange={handleInputChange}
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -115,11 +146,23 @@ ${formData.message}
                   required 
                   value={formData.message}
                   onChange={handleInputChange}
+                  disabled={isSubmitting}
                 />
               </div>
 
-              <Button type="submit" className="bg-heringer-blue hover:bg-heringer-light-blue text-white w-full">
-                Enviar Mensagem
+              <Button 
+                type="submit" 
+                className="bg-heringer-blue hover:bg-heringer-light-blue text-white w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Enviando...
+                  </>
+                ) : (
+                  'Enviar Mensagem'
+                )}
               </Button>
             </form>
           </div>
