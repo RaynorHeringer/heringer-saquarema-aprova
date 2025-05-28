@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
 import { MapPin, Phone, Mail, Clock, Smartphone, Loader2 } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -30,18 +31,21 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Send to Trello via Supabase edge function
-      const response = await fetch('/functions/v1/create-trello-card', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      console.log('Enviando dados para Trello:', formData);
+
+      // Use Supabase client to call the edge function
+      const { data, error } = await supabase.functions.invoke('create-trello-card', {
+        body: formData,
       });
 
-      const result = await response.json();
+      if (error) {
+        console.error('Erro da função:', error);
+        throw error;
+      }
 
-      if (result.success) {
+      console.log('Resposta da função:', data);
+
+      if (data?.success) {
         toast({
           title: "Mensagem enviada com sucesso!",
           description: "Recebemos seu contato e entraremos em contato em breve.",
@@ -56,10 +60,10 @@ const Contact = () => {
           message: ''
         });
       } else {
-        throw new Error(result.error || 'Erro ao enviar mensagem');
+        throw new Error(data?.error || 'Erro ao enviar mensagem');
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Erro completo:', error);
       toast({
         title: "Erro ao enviar mensagem",
         description: "Ocorreu um erro ao enviar sua mensagem. Tente novamente ou entre em contato pelo WhatsApp.",
