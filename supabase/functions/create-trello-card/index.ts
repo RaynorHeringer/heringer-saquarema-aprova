@@ -21,21 +21,51 @@ serve(async (req) => {
     // Get Trello credentials from environment variables
     const TRELLO_API_KEY = Deno.env.get('TRELLO_API_KEY')
     const TRELLO_TOKEN = Deno.env.get('TRELLO_TOKEN')
-    const TRELLO_LIST_ID = Deno.env.get('TRELLO_LIST_ID')
+    const BOARD_ID = 'eHqhE838' // Board ID fornecido pelo usuário
 
     console.log('API Key existe:', !!TRELLO_API_KEY)
     console.log('Token existe:', !!TRELLO_TOKEN)
-    console.log('List ID existe:', !!TRELLO_LIST_ID)
-    console.log('List ID valor:', TRELLO_LIST_ID)
+    console.log('Board ID:', BOARD_ID)
 
-    if (!TRELLO_API_KEY || !TRELLO_TOKEN || !TRELLO_LIST_ID) {
+    if (!TRELLO_API_KEY || !TRELLO_TOKEN) {
       const error = 'Missing Trello credentials: ' + 
         (!TRELLO_API_KEY ? 'API_KEY ' : '') +
-        (!TRELLO_TOKEN ? 'TOKEN ' : '') +
-        (!TRELLO_LIST_ID ? 'LIST_ID' : '')
+        (!TRELLO_TOKEN ? 'TOKEN ' : '')
       console.error(error)
       throw new Error(error)
     }
+
+    // First, validate credentials by getting board info and lists
+    console.log('Validando credenciais e obtendo listas do board...')
+    const boardUrl = `https://api.trello.com/1/boards/${BOARD_ID}/lists?key=${TRELLO_API_KEY}&token=${TRELLO_TOKEN}`
+    
+    console.log('Chamando API para obter listas:', boardUrl.replace(TRELLO_TOKEN, 'TOKEN_HIDDEN').replace(TRELLO_API_KEY, 'KEY_HIDDEN'))
+
+    const boardResponse = await fetch(boardUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+
+    console.log('Status da resposta do board:', boardResponse.status)
+
+    if (!boardResponse.ok) {
+      const errorText = await boardResponse.text()
+      console.error('Erro ao acessar board:', errorText)
+      throw new Error(`Erro ao acessar board Trello (${boardResponse.status}): ${errorText}`)
+    }
+
+    const lists = await boardResponse.json()
+    console.log('Listas encontradas no board:', lists.map((list: any) => ({ id: list.id, name: list.name })))
+
+    // Use the first list or find a specific one
+    const targetList = lists[0] // Using first list for now
+    if (!targetList) {
+      throw new Error('Nenhuma lista encontrada no board')
+    }
+
+    console.log('Usando lista:', { id: targetList.id, name: targetList.name })
 
     // Create card name and description
     const cardName = `Novo Contato: ${name} - ${subject}`
@@ -52,16 +82,12 @@ ${message}
 *Enviado pelo site em ${new Date().toLocaleString('pt-BR')}*
     `
 
-    console.log('Enviando para Trello:', {
-      cardName,
-      listId: TRELLO_LIST_ID,
-      apiKey: TRELLO_API_KEY?.substring(0, 8) + '...'
-    })
+    console.log('Criando card no Trello...')
 
-    // Create card in Trello
-    const trelloUrl = `https://api.trello.com/1/cards?key=${TRELLO_API_KEY}&token=${TRELLO_TOKEN}&idList=${TRELLO_LIST_ID}&name=${encodeURIComponent(cardName)}&desc=${encodeURIComponent(cardDescription)}&pos=top`
+    // Create card in Trello using the validated list ID
+    const trelloUrl = `https://api.trello.com/1/cards?key=${TRELLO_API_KEY}&token=${TRELLO_TOKEN}&idList=${targetList.id}&name=${encodeURIComponent(cardName)}&desc=${encodeURIComponent(cardDescription)}&pos=top`
     
-    console.log('URL da API Trello:', trelloUrl.replace(TRELLO_TOKEN, 'TOKEN_HIDDEN').replace(TRELLO_API_KEY, 'KEY_HIDDEN'))
+    console.log('URL da API Trello para criar card:', trelloUrl.replace(TRELLO_TOKEN, 'TOKEN_HIDDEN').replace(TRELLO_API_KEY, 'KEY_HIDDEN'))
 
     const trelloResponse = await fetch(trelloUrl, {
       method: 'POST',
@@ -88,7 +114,8 @@ ${message}
       JSON.stringify({ 
         success: true, 
         message: 'Card criado no Trello com sucesso!',
-        cardId: trelloCard.id 
+        cardId: trelloCard.id,
+        listName: targetList.name
       }),
       {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
