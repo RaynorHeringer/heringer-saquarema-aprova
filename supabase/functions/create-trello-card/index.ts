@@ -13,15 +13,28 @@ serve(async (req) => {
   }
 
   try {
+    console.log('Função create-trello-card iniciada')
+    
     const { name, email, phone, subject, message } = await req.json()
+    console.log('Dados recebidos:', { name, email, phone, subject, message })
 
     // Get Trello credentials from environment variables
     const TRELLO_API_KEY = Deno.env.get('TRELLO_API_KEY')
     const TRELLO_TOKEN = Deno.env.get('TRELLO_TOKEN')
     const TRELLO_LIST_ID = Deno.env.get('TRELLO_LIST_ID')
 
+    console.log('API Key existe:', !!TRELLO_API_KEY)
+    console.log('Token existe:', !!TRELLO_TOKEN)
+    console.log('List ID existe:', !!TRELLO_LIST_ID)
+    console.log('List ID valor:', TRELLO_LIST_ID)
+
     if (!TRELLO_API_KEY || !TRELLO_TOKEN || !TRELLO_LIST_ID) {
-      throw new Error('Missing Trello credentials')
+      const error = 'Missing Trello credentials: ' + 
+        (!TRELLO_API_KEY ? 'API_KEY ' : '') +
+        (!TRELLO_TOKEN ? 'TOKEN ' : '') +
+        (!TRELLO_LIST_ID ? 'LIST_ID' : '')
+      console.error(error)
+      throw new Error(error)
     }
 
     // Create card name and description
@@ -39,27 +52,37 @@ ${message}
 *Enviado pelo site em ${new Date().toLocaleString('pt-BR')}*
     `
 
+    console.log('Enviando para Trello:', {
+      cardName,
+      listId: TRELLO_LIST_ID,
+      apiKey: TRELLO_API_KEY?.substring(0, 8) + '...'
+    })
+
     // Create card in Trello
-    const trelloResponse = await fetch('https://api.trello.com/1/cards', {
+    const trelloUrl = `https://api.trello.com/1/cards?key=${TRELLO_API_KEY}&token=${TRELLO_TOKEN}&idList=${TRELLO_LIST_ID}&name=${encodeURIComponent(cardName)}&desc=${encodeURIComponent(cardDescription)}&pos=top`
+    
+    console.log('URL da API Trello:', trelloUrl.replace(TRELLO_TOKEN, 'TOKEN_HIDDEN').replace(TRELLO_API_KEY, 'KEY_HIDDEN'))
+
+    const trelloResponse = await fetch(trelloUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        key: TRELLO_API_KEY,
-        token: TRELLO_TOKEN,
-        idList: TRELLO_LIST_ID,
-        name: cardName,
-        desc: cardDescription,
-        pos: 'top' // Add to top of list
-      })
+      }
     })
 
+    console.log('Status da resposta Trello:', trelloResponse.status)
+    console.log('Headers da resposta:', Object.fromEntries(trelloResponse.headers.entries()))
+
+    const responseText = await trelloResponse.text()
+    console.log('Resposta Trello (texto):', responseText)
+
     if (!trelloResponse.ok) {
-      throw new Error(`Trello API error: ${trelloResponse.statusText}`)
+      console.error('Erro da API Trello:', responseText)
+      throw new Error(`Trello API error (${trelloResponse.status}): ${responseText}`)
     }
 
-    const trelloCard = await trelloResponse.json()
+    const trelloCard = JSON.parse(responseText)
+    console.log('Card criado com sucesso:', trelloCard.id)
 
     return new Response(
       JSON.stringify({ 
@@ -73,7 +96,7 @@ ${message}
       },
     )
   } catch (error) {
-    console.error('Error creating Trello card:', error)
+    console.error('Erro na função:', error)
     return new Response(
       JSON.stringify({ 
         success: false, 
