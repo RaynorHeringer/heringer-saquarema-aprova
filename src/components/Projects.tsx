@@ -30,14 +30,16 @@ const Projects = () => {
       title: "Vilatur",
       category: "Saquarema",
       image: "/lovable-uploads/Image35.jpg",
-      description: "Projeto arquitetônico residencial em Vilatur - Saquarema."
+      description: "Projeto arquitetônico residencial em Vilatur - Saquarema.",
+      videoUrl: "https://www.youtube.com/embed/PQpipwsIfxk"
     },
     {
       id: 3,
       title: "Bacaxá",
       category: "Saquarema",
       image: "/lovable-uploads/Imagem24.png",
-      description: "Projeto arquitetônico residencial em Bacaxa - Saquarema."
+      description: "Projeto arquitetônico residencial em Bacaxa - Saquarema.",
+      videoUrl: "https://www.youtube.com/embed/SH6yeBTZJ7g"
     },
     {
       id: 4,
@@ -51,7 +53,8 @@ const Projects = () => {
       title: "AlphaVille",
       category: "Marica",
       image: "/lovable-uploads/marica01.jpg",
-      description: "Projeto arquitetônico residencia em condominio de Maricá."
+      description: "Projeto arquitetônico residencia em condominio de Maricá.",
+      videoUrl: "https://www.youtube.com/embed/Xbz3qrItphc"
     },
     {
       id: 6,
