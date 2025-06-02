@@ -1,10 +1,13 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState('todos');
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
   
   const tabs = [
     { id: 'todos', label: 'Todos' },
@@ -19,7 +22,8 @@ const Projects = () => {
       title: "Jacone",
       category: "Saquarema",
       image: "/lovable-uploads/Imagem13.jpg",
-      description: "Projeto arquitetônico residencial em Jacone - Saquarema."
+      description: "Projeto arquitetônico residencial em Jacone - Saquarema.",
+      videoUrl: "https://www.youtube.com/embed/GAYpGlVVyHE"
     },
     {
       id: 2,
@@ -62,6 +66,13 @@ const Projects = () => {
     ? projects 
     : projects.filter(project => project.category === activeTab);
 
+  const handleProjectClick = (project) => {
+    if (project.videoUrl) {
+      setSelectedProject(project);
+      setIsVideoModalOpen(true);
+    }
+  };
+
   return (
     <section id="projects" className="section-padding bg-white">
       <div className="container mx-auto px-4">
@@ -89,7 +100,13 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="group overflow-hidden rounded-lg shadow-md border border-gray-100">
+            <div 
+              key={project.id} 
+              className={`group overflow-hidden rounded-lg shadow-md border border-gray-100 ${
+                project.videoUrl ? 'cursor-pointer hover:shadow-lg transition-shadow' : ''
+              }`}
+              onClick={() => handleProjectClick(project)}
+            >
               <div className="relative h-60 overflow-hidden">
                 <img 
                   src={project.image} 
@@ -99,6 +116,9 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-4 text-white w-full">
                     <h3 className="text-lg font-bold">{project.title}</h3>
+                    {project.videoUrl && (
+                      <p className="text-sm">Clique para ver o render</p>
+                    )}
                   </div>
                 </div>
               </div>
@@ -120,6 +140,27 @@ const Projects = () => {
           </Button>
         </div>
       </div>
+
+      {/* Video Modal */}
+      <Dialog open={isVideoModalOpen} onOpenChange={setIsVideoModalOpen}>
+        <DialogContent className="max-w-4xl w-full">
+          <DialogHeader>
+            <DialogTitle>{selectedProject?.title} - Render do Projeto</DialogTitle>
+          </DialogHeader>
+          <div className="relative w-full aspect-video">
+            {selectedProject?.videoUrl && (
+              <iframe
+                src={selectedProject.videoUrl}
+                title={`${selectedProject.title} Render`}
+                className="w-full h-full rounded-lg"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
